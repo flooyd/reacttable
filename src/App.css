@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrapper {
+  box-sizing: border-box;
+  width: "calc(100vw - 40px)";
+  box-sizing: border-box;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.table {
+  border: 3px solid white;
+  border-top: none;
+  transition: all 0.25s 0s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row,
+.firstRow {
+  z-index: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  border-collapse: collapse;
+  border-top: 1px solid black;
+  background: white;
+  z-index: 1;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.firstRow {
+  border: none;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rowDropped {
+  background: lightgreen;
+}
+
+.row div,
+.firstRow div {
+  text-align: left;
+  z-index: 2;
+  border-right: 1px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+  width: 50%;
+  text-align: left;
+}
+
+.firstRow div {
+  border: none;
+}
+
+.row div:last-of-type {
+  border-right: none;
+}
+
+.firstRow div:last-of-type {
+  border-right: none;
+}
+
+.row:first-of-type {
+  border-top: none;
+}
+
+.firstRow:first-of-type {
+  border-bottom: 3px solid black;
+}
+
+#DndLiveRegion-0 {
+  width: 0px !important;
+  height: 0px !important;
+  position: relative !important;
+  margin: 0px !important;
+  clip-path: none !important;
+  clip: none !important;
+}
+
+.dropable {
+  margin-top: 5px;
+}
+
+div.dropable {
+  transform: perspective(100em) rotateX(0deg);
+  box-shadow: black 0px 25px 70px -25px, lightgreen 0px 10px 30px -35px;
+  border: 1px solid;
+  border-color: rgb(213, 220, 226) rgb(213, 220, 226) rgb(184, 194, 204);
+}
+
+div.firstRow {
+  box-shadow: none;
+}
+
+div.row:hover {
+  background: #eee;
 }
